@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-lldpd\n"
 "POT-Creation-Date: 2018-05-23 18:25+0300\n"
-"PO-Revision-Date: 2024-08-27 12:09+0000\n"
-"Last-Translator: sergio <sergio+it@outerface.net>\n"
+"PO-Revision-Date: 2025-09-21 06:29+0000\n"
+"Last-Translator: vanapro1 <law820314@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationslldpd/ru/>\n"
 "Language: ru\n"
@@ -12,22 +12,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.7.1-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:374
 msgid "1A"
 msgstr "1A"
 
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:853
+msgctxt "lldpd Custom TLV"
+msgid "Add Custom TLV"
+msgstr "Добавить пользовательский TLV"
+
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:54
 msgid "Administrative Status"
 msgstr "Административное состояние"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:841
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:1005
 msgid "Advanced Settings"
-msgstr "Дополнительные настройки"
+msgstr "Расширенные настройки"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:198
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:209
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:191
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:202
 msgid "Age"
 msgstr "Возраст"
 
@@ -49,9 +54,13 @@ msgstr ""
 msgid "Altitude"
 msgstr "Высота"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:835
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:996
 msgid "Basic Settings"
 msgstr "Основные настройки"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:926
+msgid "Behaviour"
+msgstr "Поведение"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:358
 msgid "Building"
@@ -77,11 +86,21 @@ msgstr "Версия протокола CDP"
 msgid "CDPv1 and CDPv2"
 msgstr "CDPv1 и CDPv2"
 
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:970
+msgid "CSV of 1 or more hex values, e.g. aa or bb,cc or 11,55,1a"
+msgstr ""
+"CSV с 1 или более шестнадцатеричными значениями, например, aa или bb,cc или "
+"11,55,1a"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:940
+msgid "CSV of 3 hex values, e.g. aa,ee,ff"
+msgstr "CSV из 3 шестнадцатеричных значений, например aa,ee,ff"
+
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:39
 msgid "Cannot have both interface %s and its exclusion %s"
 msgstr "Оба и интерфейс %s и его исключение %s нельзя"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:319
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:289
 msgid "Capabilities"
 msgstr "Возможности"
 
@@ -95,13 +114,17 @@ msgstr "Адрес"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:46
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:65
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:681
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:613
 msgid "Collecting data..."
 msgstr "Сбор данных..."
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:588
 msgid "Communication Device Endpoints (Class III)"
 msgstr "Communication Device Endpoints (класс III)"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:966
+msgid "Content"
+msgstr "Содержание"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:205
 msgid "Coordinate based"
@@ -111,9 +134,18 @@ msgstr "Координировать на основе"
 msgid "Country"
 msgstr "Страна"
 
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:845
+msgid "Custom TLV"
+msgstr "Пользовательский TLV"
+
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:307
 msgid "Datum"
 msgstr "Датум"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:847
+msgid "Default insert behaviour is add."
+msgstr ""
+"По умолчанию операция вставки выполняется в режиме добавления (а не замены)."
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:439
 msgid ""
@@ -121,16 +153,16 @@ msgid ""
 "is used as a management address without any check. To blacklist IPv6 "
 "addresses, use <code>!*:*</code>."
 msgstr ""
-"Если не указано, используется первый IPv4 и первый IPv6 адреса. Если указан "
+"Если не указано, используется первый IPv4 и первый IPv6-адрес. Если указан "
 "конкретный IP-адрес, он будет использован как адрес управления без какой-"
-"либо проверки. Если вы хотите занести в черный список IPv6-адреса, вы можете "
+"либо проверки. Если хотите занести IPv6-адреса в список блокировок, можете "
 "использовать шаблон <code>!*:*</code>."
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:61
 msgid "Delete count"
 msgstr "Удалено"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:273
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:266
 msgid "Description"
 msgstr "Описание"
 
@@ -156,7 +188,7 @@ msgstr "Отключите рекламу выпуска, версии ядра 
 msgid "Disabled"
 msgstr "Отключено"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:687
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:619
 msgid "Discovered Neighbors"
 msgstr "Обнаруженные соседи"
 
@@ -288,11 +320,11 @@ msgstr "Предоставить доступ к информации о сос�
 msgid "Host location type"
 msgstr "Тип местоположения принимающей стороны"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:276
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:272
 msgid "ID"
 msgstr "ID"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:277
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:273
 msgid "ID type"
 msgstr "Тип ID"
 
@@ -312,7 +344,7 @@ msgstr "Обнаружено"
 msgid "Interface MAC address"
 msgstr "MAC-адрес интерфейса"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:688
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:620
 msgid "Interface Statistics"
 msgstr "Статистика интерфейсов"
 
@@ -320,6 +352,10 @@ msgstr "Статистика интерфейсов"
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:112
 msgid "Interface name"
 msgstr "Имя интерфейса"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:922
+msgid "Invalid TLV string format"
+msgstr "Недопустимый формат строки TLV"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:648
 msgid ""
@@ -334,7 +370,7 @@ msgstr ""
 msgid "LLDP"
 msgstr "LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:671
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:603
 msgid "LLDP Status"
 msgstr "Состояние LLDP"
 
@@ -358,11 +394,11 @@ msgstr "Политика LLDP-MED"
 msgid "LLDPDU destination MAC"
 msgstr "MAC-адрес назначения, для отправки LLDPDU"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:851
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:1015
 msgid "LLDPd Settings"
 msgstr "Настройки LLDPd"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:852
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:1016
 msgid "LLDPd is an implementation of IEEE 802.1ab"
 msgstr "LLDPd это программная реализация стандарта IEEE 802.1ab"
 
@@ -373,8 +409,8 @@ msgid ""
 "sensitive information like serial numbers."
 msgstr ""
 "LLDPd будет по прежнему получать (и публиковать, используя SNMP, если он "
-"включен) информацию LLDP-MED TLV, но не будет отправлять. Используйте эту "
-"опцию, если вы не хотите передавать важную информацию, такую как серийные "
+"включён) информацию LLDP-MED TLV, но не будет отправлять. Используйте эту "
+"опцию, если не хотите передавать важную информацию, такую как серийные "
 "номера."
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:504
@@ -387,7 +423,7 @@ msgstr ""
 msgid "Latitude"
 msgstr "Широта"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:676
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:608
 msgid "Local Chassis"
 msgstr "Локальное шасси"
 
@@ -408,7 +444,7 @@ msgstr "Долгота"
 msgid "MAC address"
 msgstr "MAC-адрес"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:233
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:222
 msgid "MFS"
 msgstr "MFS"
 
@@ -416,7 +452,7 @@ msgstr "MFS"
 msgid "Main Street"
 msgstr "Главная улица"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:295
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:280
 msgid "Management IP(s)"
 msgstr "IP-адреса"
 
@@ -440,9 +476,9 @@ msgstr "Должны содержать: \"coordinate ...\", \"address ...\" и�
 msgid "Must start: application ..."
 msgstr "Должно начинаться с: application ..."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:197
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:208
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:270
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:190
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:201
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:262
 msgid "Name"
 msgstr "Название"
 
@@ -458,13 +494,17 @@ msgstr "Сетевые интерфейсы"
 msgid "Network IO for chassis ID"
 msgstr "Сетевые интерфейсы, используемые для вычисления ID шасси (chassis ID)"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:838
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:855
+msgid "Network Interface(s)"
+msgstr "Сетевой интерфейс(ы)"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:999
 msgid "Network Interfaces"
 msgstr "Сетевые интерфейсы"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:603
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:660
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:664
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:562
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:592
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:596
 msgid "No data to display"
 msgstr "Нет данных для отображения"
 
@@ -472,7 +512,11 @@ msgstr "Нет данных для отображения"
 msgid "Number"
 msgstr "Номер"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:854
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:937
+msgid "OUI CSV"
+msgstr "CSV-файл с OUI"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:1018
 msgid "On this page you may configure LLDPd parameters."
 msgstr "На данной странице можно настроить параметры LLDPd."
 
@@ -495,15 +539,15 @@ msgstr "Переопределить %s."
 msgid "Override the announced location of the host."
 msgstr "Переопределите объявленное местоположение хоста."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:216
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:210
 msgid "Port ID"
 msgstr "ID порта"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:219
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:211
 msgid "Port ID type"
 msgstr "Тип ID порта"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:224
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:215
 msgid "Port description"
 msgstr "Описание порта"
 
@@ -516,9 +560,13 @@ msgstr "Почтовый индекс"
 msgid "Protocol"
 msgstr "Протокол"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:844
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:1008
 msgid "Protocols Support"
 msgstr "Поддержка протоколов"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:982
+msgid "Raw"
+msgstr "Низкоуровневый"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:226
 msgid "Raw config string sent to lldpd, starting: [coordinate|address|elin]"
@@ -615,6 +663,10 @@ msgstr "Состояние"
 msgid "Street"
 msgstr "Улица"
 
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:953
+msgid "Subtype"
+msgstr "Подтип"
+
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:468
 msgid "Suffix %s for millisecond values."
 msgstr "Прибавляй суффикс %s для значений миллисекунд."
@@ -633,7 +685,7 @@ msgstr "Описание системы"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:123
 msgid "System hostname"
-msgstr "Имя системы"
+msgstr "Система hostname"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:438
 msgid "System management IO"
@@ -647,8 +699,20 @@ msgstr "Объявления адресов управления данной с
 msgid "System platform description"
 msgstr "Описание платформы"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:228
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:230
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:1002
+msgid "TLV"
+msgstr "TLV (формат данных)"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:846
+msgid ""
+"TLV that lack network interfaces here are sent according to <code>interface "
+"pattern</code> (Network IO under Network Interfaces)."
+msgstr ""
+"TLV-структуры, у которых отсутствуют сетевые интерфейсы, отправляются в "
+"соответствии с <code>interface pattern</code> (см. Network IO в разделе "
+"\"Сетевые интерфейсы\")."
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:219
 msgid "TTL"
 msgstr "TTL"
 
@@ -673,12 +737,12 @@ msgstr ""
 "Задержка между двумя передачами LLDP PDU. Значение по умолчанию составляет "
 "30 секунд."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:672
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:604
 msgid ""
 "This page allows you to see discovered LLDP neighbors, local interfaces "
 "statistics and local chassis information."
 msgstr ""
-"На данной странице вы можете посмотреть таблицу обнаруженных соседей LLDP, "
+"На данной странице можно посмотреть таблицу обнаруженных соседей LLDP, "
 "статистику локальных интерфейсов и информацию о локальном шасси."
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:464
@@ -710,7 +774,7 @@ msgid "Tx only"
 msgstr "Только Tx"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:154
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:262
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:252
 msgid "Unknown"
 msgstr "Неизвестно"
 
@@ -731,8 +795,15 @@ msgstr ""
 "Данная настройка позволяет принудительно использовать в качестве "
 "идентификатор порта имя интерфейса или MAC-адрес."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:307
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:316
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:928
+msgid "add"
+msgstr "добавить"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:927
+msgid "default"
+msgstr "по умолчанию"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:287
 msgid "disabled"
 msgstr "выключено"
 
@@ -740,8 +811,7 @@ msgstr "выключено"
 msgid "enable filter"
 msgstr "включить фильтр"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:307
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:316
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:287
 msgid "enabled"
 msgstr "включено"
 
@@ -752,6 +822,10 @@ msgstr "хранить только одного соседа"
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/lldpd.js:47
 msgid "keep only one protocol"
 msgstr "хранить только один протокол"
+
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:929
+msgid "replace"
+msgstr "заменить"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:296
 msgid "valid syntax: %f .. %f [mf]"

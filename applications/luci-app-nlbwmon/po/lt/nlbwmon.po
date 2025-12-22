@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-09-15 21:45+0000\n"
+"PO-Revision-Date: 2025-05-22 13:32+0000\n"
 "Last-Translator: Džiugas Januševičius <dziugas1959@hotmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsnlbwmon/lt/>\n"
@@ -9,10 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
-"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
-"1 : 2);\n"
-"X-Generator: Weblate 5.8-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/display.js:563
 msgid "%d IPv4-only hosts"
@@ -47,37 +46,37 @@ msgstr "-7 – Paleisti iš naujo kas savaitę, prieš mėnesio pabaigą"
 msgid "1 - Restart every 1st of month"
 msgstr "1 – Paleisti iš naujo kiekvieną 1-ąją mėnesio dieną"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:161
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:162
 msgid "10m - frequent commits at the expense of flash wear"
 msgstr ""
 "10min. – dažni pateikimai, spartesnis išliekamosios atminties (vietovės) "
 "nusidėvėjimas"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:160
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:161
 msgid "12h - compromise between risk of data loss and flash wear"
 msgstr ""
 "12val. – kompromisas tarp duomenų praradimo rizikos ir išliekamosios "
 "atminties (vietovės) nusidėvėjimo"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:159
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:160
 msgid "24h - least flash wear at the expense of data loss risk"
 msgstr ""
 "24val. – mažiausias išliekamosios atminties (vietovės) nusidėvėjimas, tačiau "
 "didesnė duomenų praradimo rizika"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:166
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:167
 msgid "30s - refresh twice per minute for reasonably current stats"
 msgstr ""
 "30-imt sekundžių – atnaujinti du kartus per minutę, kad gautumėte "
 "„pakankamai aktualią“ statistiką"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:167
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:168
 msgid "5m - rarely refresh to avoid frequently clearing conntrack counters"
 msgstr ""
 "5-ios minutės – retai atnaujinti, kad nereikėtų dažnai išvalyti – "
 "„conntrack“ skaitiklių"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:162
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:163
 msgid "60s - commit minutely, useful for non-flash storage"
 msgstr ""
 "60-imt sekundžių – nusiųsti/patvirtinti kas minute, naudinga ne "
@@ -152,7 +151,7 @@ msgstr "Aplikacijos protokolai"
 
 #: applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json:34
 msgid "Backup"
-msgstr "Atkūrimas/Sukurti atsarginę kopiją"
+msgstr "Atsarginė kopija"
 
 #: applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json:3
 msgid "Bandwidth Monitor"
@@ -183,7 +182,7 @@ msgstr ""
 msgid "Collecting data..."
 msgstr "Renkama/-i informacija (duomenys)..."
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:157
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:158
 msgid "Commit interval"
 msgstr "Nusiuntimo/Patvirtinimo intervalas"
 
@@ -208,11 +207,11 @@ msgstr "Prisijungimai"
 msgid "Connections / Host"
 msgstr "Prisijungimai┃Skleidėjas/Vedėjas"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:169
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:170
 msgid "Database directory"
 msgstr "Duomenų bazės katalogas"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:170
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:171
 msgid ""
 "Database storage directory. One file per accounting period will be placed "
 "into this directory."
@@ -377,7 +376,7 @@ msgstr "IPv6 – Interneto protokolo versija 6"
 msgid "Interval"
 msgstr "Intervalas"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:158
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:159
 msgid ""
 "Interval at which the temporary in-memory database is committed to the "
 "persistent database directory."
@@ -385,7 +384,7 @@ msgstr ""
 "Intervalas, per kurį laikinoji atmintyje, esanti duomenų bazė yra įtraukiama "
 "į nuolatinį duomenų bazės katalogą/vietovę."
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:165
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:166
 msgid ""
 "Interval at which traffic counters of still established connections are "
 "refreshed from netlink information."
@@ -418,7 +417,7 @@ msgstr "Gauti netaisyklingai/blogai suformuoti duomenys"
 msgid "Maximum entries"
 msgstr "Maksimalus įrašų skaičius"
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:155
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:156
 msgid ""
 "Maximum number of accounting periods to keep, use zero to keep databases "
 "forever."
@@ -484,7 +483,7 @@ msgstr ""
 "reikšmė nurodo – IP protokolą, antroji reikšmė – prievado numerį, ir trečiam "
 "stulpelį – pateikiamas atvaizduoto protokolo pavadinimas."
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:164
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:165
 msgid "Refresh interval"
 msgstr "Atnaujinti intervalą"
 
@@ -522,7 +521,7 @@ msgstr ""
 "Pirmojo ataskaitinio periodo pradžios data, pvz.: interneto teikėjo "
 "sutarties pradžia."
 
-#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:154
+#: applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js:155
 msgid "Stored periods"
 msgstr "Laikomi periodai"
 

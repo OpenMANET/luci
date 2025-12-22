@@ -243,21 +243,20 @@ return view.extend({
 		});
 	},
 
-	render: function(data) {
-		var svg = data[0],
-		    devs = data[1];
+	render: function([svg, devs]) {
 
-		var v = E('div', {}, E('div'));
+		var v = E('div', { 'class': 'cbi-map', 'id': 'map' }, E('div'));
 
 		for (var i = 0; i < devs.length; i++) {
 			var ifname = devs[i].getName();
+			const ssid = devs[i].wif?.getSSID?.() || null;
 
-			if (!ifname)
+			if (!ifname || !devs[i].isUp() || devs[i].wif?.isDisabled())
 				continue;
 
 			var csvg = svg.cloneNode(true);
 
-			v.firstElementChild.appendChild(E('div', { 'data-tab': ifname, 'data-tab-title': ifname }, [
+			v.firstElementChild.appendChild(E('div', { 'class': 'cbi-section', 'data-tab': ifname, 'data-tab-title': ssid ? `${ifname} ${ssid}` : ifname }, [
 				csvg,
 				E('div', { 'class': 'right' }, E('small', { 'id': 'scale' }, '-')),
 				E('br'),
@@ -283,7 +282,8 @@ return view.extend({
 						E('td', { 'class': 'td right top' }, E('strong', {}, [ _('Peak:') ])),
 						E('td', { 'class': 'td', 'id': 'tx_bw_peak' }, rate(0, true))
 					])
-				])
+				]),
+				E('div', {'class': 'cbi-section-create'})
 			]));
 
 			this.updateGraph(ifname, csvg, [ { line: 'rx', counter: true }, null, { line: 'tx', counter: true } ], function(svg, info) {
@@ -309,7 +309,11 @@ return view.extend({
 
 		this.pollData();
 
-		return v;
+		return  E([], [
+			E('h2', _('Bandwidth')),
+			E('div', {'class': 'cbi-map-descr'}, _('This page displays the bandwidth used for all available physical interfaces.')),
+			v
+		]);
 	},
 
 	handleSaveApply: null,

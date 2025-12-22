@@ -52,7 +52,7 @@ return view.extend({
 		real_servers = uci.sections('keepalived', 'real_server');
 		o = s.taboption('general', form.DynamicList, 'real_server', _('Real Server'));
 		if (real_servers != '') {
-			for (i = 0; i < real_servers.length; i++) {
+			for (let i = 0; i < real_servers.length; i++) {
 				o.value(real_servers[i]['name']);
 			}
 		}
@@ -110,7 +110,7 @@ return view.extend({
 		o.datatype = 'uinteger';
 		o.modalonly = true;
 
-		o = s.taboption('advanced', form.Value, 'fail', _('Fail'),
+		o = s.taboption('advanced', form.Value, 'fall', _('Fall'),
 			_('Required number of successes for KO transition'));
 		o.optional = true;
 		o.datatype = 'uinteger';

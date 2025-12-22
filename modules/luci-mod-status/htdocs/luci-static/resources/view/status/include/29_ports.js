@@ -210,20 +210,24 @@ function buildInterfaceMapping(zones, networks) {
 }
 
 function formatSpeed(carrier, speed, duplex) {
-	if (speed && duplex) {
+	if ((speed > 0) && duplex) {
 		var d = (duplex == 'half') ? '\u202f(H)' : '',
 		    e = E('span', { 'title': _('Speed: %d Mibit/s, Duplex: %s').format(speed, duplex) });
 
-		switch (speed) {
-		case 10:    e.innerText = '10\u202fM' + d;  break;
-		case 100:   e.innerText = '100\u202fM' + d; break;
-		case 1000:  e.innerText = '1\u202fGbE' + d; break;
-		case 2500:  e.innerText = '2.5\u202fGbE';   break;
-		case 5000:  e.innerText = '5\u202fGbE';     break;
-		case 10000: e.innerText = '10\u202fGbE';    break;
-		case 25000: e.innerText = '25\u202fGbE';    break;
-		case 40000: e.innerText = '40\u202fGbE';    break;
-		default:    e.innerText = '%d\u202fMbE%s'.format(speed, d);
+		switch (true) {
+		case (speed < 1000):
+			e.innerText = '%d\u202fM%s'.format(speed, d);
+			break;
+		case (speed == 1000):
+			e.innerText = '1\u202fGbE' + d;
+			break;
+		case (speed >= 1e6 && speed < 1e9):
+			e.innerText = '%f\u202fTbE'.format(speed / 1e6);
+			break;
+		case (speed >= 1e9):
+			e.innerText = '%f\u202fPbE'.format(speed / 1e9);
+			break;
+		default: e.innerText = '%f\u202fGbE'.format(speed / 1000);
 		}
 
 		return e;
@@ -265,7 +269,7 @@ function renderNetworkBadge(network, zonename) {
 	if (l3dev)
 		span.appendChild(E('img', {
 			'title': l3dev.getI18n(),
-			'src': L.resource('icons/%s%s.png'.format(l3dev.getType(), l3dev.isUp() ? '' : '_disabled'))
+			'src': L.resource('icons/%s%s.svg'.format(l3dev.getType(), l3dev.isUp() ? '' : '_disabled'))
 		}));
 	else
 		span.appendChild(E('em', _('(no interfaces attached)')));
@@ -359,7 +363,7 @@ return baseclass.extend({
 			return E('div', { 'class': 'ifacebox', 'style': 'margin:.25em;min-width:70px;max-width:100px' }, [
 				E('div', { 'class': 'ifacebox-head', 'style': 'font-weight:bold' }, [ port.netdev.getName() ]),
 				E('div', { 'class': 'ifacebox-body' }, [
-					E('img', { 'src': L.resource('icons/port_%s.png').format(carrier ? 'up' : 'down') }),
+					E('img', { 'src': L.resource('icons/port_%s.svg').format(carrier ? 'up' : 'down') }),
 					E('br'),
 					formatSpeed(carrier, speed, duplex)
 				]),

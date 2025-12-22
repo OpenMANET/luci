@@ -358,7 +358,7 @@ function build_pagetree() {
 		firstchild_ineligible: 'bool'
 	};
 
-	let files = glob('/usr/share/luci/menu.d/*.json', '/etc/config/*', '/usr/lib/lua/luci/controller/*.lua', '/usr/lib/lua/luci/controller/*/*.lua');
+	let files = glob('/usr/share/luci/menu.d/*.json', '/usr/lib/lua/luci/controller/*.lua', '/usr/lib/lua/luci/controller/*/*.lua');
 	let cachefile;
 
 	if (indexcache) {
@@ -375,15 +375,13 @@ function build_pagetree() {
 
 	for (let file in files) {
 		let data;
+
 		if (substr(file, -5) == '.json')
 			data = read_jsonfile(file);
-		else if (substr(file, -4) == '.lua')
-			if (load_luabridge(true))
-				data = runtime.call('luci.dispatcher', 'process_lua_controller', file);
-			else
-				warn(`Lua controller ${file} present but no Lua runtime installed.\n`);
+		else if (load_luabridge(true))
+			data = runtime.call('luci.dispatcher', 'process_lua_controller', file);
 		else
-			continue;
+			warn(`Lua controller ${file} present but no Lua runtime installed.\n`);
 
 		if (type(data) == 'object') {
 			for (let path, spec in data) {
@@ -900,11 +898,6 @@ dispatch = function(_http, path) {
 		let menu = menu_json();
 
 		path ??= map(match(http.getenv('PATH_INFO'), /[^\/]+/g), m => urldecode(m[0]));
-
-		let homepage = uci.get('luci', 'main', 'homepage');
-		if (path == null && homepage != null) {
-			path = split(homepage, "/");
-		}
 
 		let resolved = resolve_page(menu, path);
 

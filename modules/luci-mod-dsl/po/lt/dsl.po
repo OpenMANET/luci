@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-09-15 19:32+0000\n"
+"PO-Revision-Date: 2024-10-20 19:09+0000\n"
 "Last-Translator: Džiugas Januševičius <dziugas1959@hotmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/openwrt/"
 "luci_modules_luci-mod-dsl/lt/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.8-dev\n"
+"X-Generator: Weblate 5.8-rc\n"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:157
 msgid "ATM Header Error Control Errors (HEC-P)"
@@ -109,12 +109,6 @@ msgstr "Persiųsti/-ų klaidų taisymo sekundės („FECS“)"
 msgid "Grant access to luci-mod-dsl"
 msgstr "Duoti prieigą prie „luci-mod-dsl“"
 
-#: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:25
-msgid ""
-"Graphs below show Signal-to-noise ratio, Bit allocation, Quiet line noise "
-"and Channel characteristics function (HLOG) per sub-carrier."
-msgstr ""
-
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:125
 msgid "Impulse Noise Protection (INP)"
 msgstr "Impulsinė triukšmo apsauga („INP“)"
@@ -137,7 +131,7 @@ msgstr "Linijos apibūdinimai"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:93
 msgid "Line Mode"
-msgstr "Linijos režimas"
+msgstr "Linijos veiksena"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:129
 msgid "Line Parameters"
@@ -193,11 +187,11 @@ msgstr "Bandomieji tonai"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:96
 msgid "Power Management Mode"
-msgstr "Energijos valdymo režimas"
+msgstr "Energijos valdymo veiksena"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:119
 msgid "Rate Adaptation Mode"
-msgstr "Spartos pritaikymo režimas"
+msgstr "Spartos pritaikymo veiksena"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:126
 msgid "Retransmission (G.INP)"
@@ -237,6 +231,46 @@ msgstr "Statistika"
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/graph.js:203
 msgid "Sub-carrier"
 msgstr "Sub-ryšio operatorius"
+
+#: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:65
+msgid ""
+"The diagram shows the Channel Characteristics Function (HLOG) per subcarrier "
+"in uplink and downlink direction"
+msgstr ""
+"Diagrama rodo kanalo rašmenų funkciją – („HLOG“), kiekvieno sub-ryšio "
+"operatoriaus, aukštynkrypčio ir žemynkrypčio kryptimi"
+
+#: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:55
+msgid ""
+"The diagram shows the quiet line noise (QLN) per subcarrier in uplink and "
+"downlink direction"
+msgstr ""
+"Diagrama rodo tylios linijos triukšmą („QLN“) kiekvieno sub-ryšio "
+"operatoriaus, aukštynkrypčio ir žemynkrypčio kryptimi"
+
+#: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:25
+msgid ""
+"The following diagrams show graphically prepared DSL characteristics that "
+"are important for evaluating the DSL connection."
+msgstr ""
+"Toliau pateiktos diagramos rodo grafiškai paruoštas – „DSL“ rašmenys, kurios "
+"yra svarbios vertinant – „DSL“ ryšį."
+
+#: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:45
+msgid ""
+"The graph shows th amount of bits actually allocated per subcarrier in the "
+"uplink and downlink direction"
+msgstr ""
+"Grafike rodomas bitų kiekis, faktiškai paskirstytas, kiekvienam sub-ryšio "
+"operatoriaus, aukštynkrypčio ir žemynkrypčio kryptimi"
+
+#: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:35
+msgid ""
+"The graph shows the signal to noise ratio (SNR) per subcarrier in the uplink "
+"and downlink direction"
+msgstr ""
+"Grafika rodo signalo ir triukšmo santykį („SNR“) kiekvieno sub-ryšio "
+"operatoriaus aukštynkrypčio ir žemynkrypčio kryptimi"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:145
 msgid "Unavailable Seconds (UAS)"

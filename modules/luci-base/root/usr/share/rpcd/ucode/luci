@@ -17,6 +17,34 @@ function shellquote(s) {
 	return `'${replace(s, "'", "'\\''")}'`;
 }
 
+function callPackageVersionCheck(pkg) {
+	let version = "";
+
+	if ( access('/bin/opkg') ) {
+		// <= v24.10
+		let fd = popen('opkg list-installed ' + shellquote(pkg) + ' 2>/dev/null');
+		if (fd) {
+			const re = regexp('^' + pkg + ' - (.+)$', 's');
+			const m = match(fd.read('all'), re);
+			version = m?.[1];
+
+			fd.close();
+		}
+	}
+	else if ( access('/usr/bin/apk') ) {
+		// > v24.10
+		let fd = popen('apk list -I ' + shellquote(pkg) + ' 2>/dev/null');
+		if (fd) {
+			const re = regexp('^' + pkg + '-(.+)$', 's');
+			const m = match(fd.read('all'), re);
+			version = m?.[1];
+
+			fd.close();
+		}
+	}
+	return version;
+}
+
 const methods = {
 	getVersion: {
 		call: function(request) {
@@ -196,6 +224,8 @@ const methods = {
 				firewall:   access('/sbin/fw3') == true,
 				firewall4:  access('/sbin/fw4') == true,
 				opkg:       access('/bin/opkg') == true,
+				bonding:    access('/sys/module/bonding'),
+				mii_tool:   access('/usr/sbin/mii-tool'),
 				offloading: access('/sys/module/xt_FLOWOFFLOAD/refcnt') == true || access('/sys/module/nft_flow_offload/refcnt') == true,
 				br2684ctl:  access('/usr/sbin/br2684ctl') == true,
 				swconfig:   access('/sbin/swconfig') == true,
@@ -211,20 +241,40 @@ const methods = {
 				morsesmartmanager: access('/sbin/smart_manager') == true,
 				morsedppd:  access('/usr/bin/dppd') == true,
 				morsectrl:  access('/sbin/morsectrl') == true,
+				apk:        access('/usr/bin/apk') == true,
+				wifi:       access('/sbin/wifi') == true,
+				vrf:        access('/sys/module/vrf/refcnt') == true, // vrf.ko is loaded
+				netifd_vrf: false,
 			};
 
-			const wifi_features = [ 'eap', '11ac', '11ax', '11r', 'acs', 'sae', 'owe', 'suiteb192', 'wep', 'wps' ];
+			const wifi_features = [ 
+				'11ac',
+				'11ax',
+				'11be',
+				'11r',
+				'acs',
+				'eap',
+				'mesh',
+				'ocv',
+				'owe',
+				'sae',
+				'suiteb192',
+				'wep',
+				'wps',
+			];
 
-			for (let hostap_binary in ['hostapd', 'wpa_supplicant']) {
-				for (let suffix in ['', '_s1g']) {
-					if (access(`/usr/sbin/${hostap_binary}${suffix}`)) {
-						const feature_group = replace(hostap_binary, '_', '') + suffix;
-						result[feature_group] = { cli: access(`${hostap_binary}_cli{$suffix}`) == true };
+			if (access('/usr/sbin/hostapd')) {
+				result.hostapd = { cli: access('/usr/sbin/hostapd_cli') == true };
 
-						for (let feature in wifi_features)
-							result[feature_group][feature] = system(`${hostap_binary}${suffix} -v${feature} >/dev/null 2>/dev/null`) == 0;
-					}
-				}
+				for (let feature in wifi_features)
+					result.hostapd[feature] = system(`/usr/sbin/hostapd -v${feature} >/dev/null 2>/dev/null`) == 0;
+			}
+
+			if (access('/usr/sbin/wpa_supplicant')) {
+				result.wpasupplicant = { cli: access('/usr/sbin/wpa_cli') == true };
+
+				for (let feature in wifi_features)
+					result.wpasupplicant[feature] = system(`/usr/sbin/wpa_supplicant -v${feature} >/dev/null 2>/dev/null`) == 0;
 			}
 
 			let fd = popen('dnsmasq --version 2>/dev/null');
@@ -241,6 +291,9 @@ const methods = {
 
 				fd.close();
 			}
+
+			// This check can be removed after v25 release
+			result.netifd_vrf = match(callPackageVersionCheck('netifd'), /^20[0-9][0-9]/s)?.[0] >= 2025;
 
 			fd = popen('ipset --help 2>/dev/null');
 

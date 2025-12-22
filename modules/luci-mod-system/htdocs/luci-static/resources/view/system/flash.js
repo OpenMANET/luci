@@ -6,7 +6,7 @@
 'require fs';
 'require ui';
 
-var reconnectTargets = [window.location.host, '10.42.0.1', '192.168.12.1', '192.168.1.1', 'openwrt.lan'];
+var reconnectTargets = [window.location.host, '10.42.0.1', '10.41.254.1', '192.168.1.1', 'openwrt.lan'];
 
 var isReadonlyView = !L.hasViewPermission();
 
@@ -172,15 +172,17 @@ return view.extend({
 	},
 
 	handleBlock: function(hostname, ev) {
-		var mtdblock = dom.parent(ev.target, '.cbi-section').querySelector('[data-name="mtdselect"] select').value;
+		var mtdblock = dom.parent(ev.target, '.cbi-section').querySelector('[data-name="mtdselect"] select');
+		var mtdnumber = mtdblock.value;
+		var mtdname = mtdblock.selectedOptions[0].text.replace(/([^a-zA-Z0-9]+)/g, '-');
 		var form = E('form', {
 			'method': 'post',
 			'action': L.env.cgi_base + '/cgi-download',
 			'enctype': 'application/x-www-form-urlencoded'
 		}, [
 			E('input', { 'type': 'hidden', 'name': 'sessionid', 'value': rpc.getSessionID() }),
-			E('input', { 'type': 'hidden', 'name': 'path',      'value': '/dev/mtdblock%d'.format(mtdblock) }),
-			E('input', { 'type': 'hidden', 'name': 'filename',  'value': '%s.mtd%d.bin'.format(hostname, mtdblock) })
+			E('input', { 'type': 'hidden', 'name': 'path',      'value': '/dev/mtdblock%d'.format(mtdnumber) }),
+			E('input', { 'type': 'hidden', 'name': 'filename',  'value': '%s.mtd%d.%s.bin'.format(hostname, mtdnumber, mtdname) })
 		]);
 
 		ev.currentTarget.parentNode.appendChild(form);
@@ -243,7 +245,7 @@ return view.extend({
 						res[2].stderr ? res[2].stderr : '',
 						res[2].stderr ? E('br') : '',
 						res[2].stderr ? E('br') : '',
-						_('The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform and haven\'t decompressed the image before uploading.')
+						_('The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.')
 					]));
 
 				if (!allow_backup) {

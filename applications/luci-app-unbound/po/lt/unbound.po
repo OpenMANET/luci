@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-09-15 21:45+0000\n"
+"PO-Revision-Date: 2025-09-01 10:35+0000\n"
 "Last-Translator: Džiugas Januševičius <dziugas1959@hotmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsunbound/lt/>\n"
@@ -11,9 +11,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.8-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:160
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:161
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:53
 msgid "(none)"
 msgstr "(joks (-ia/-ie))"
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Advanced"
 msgstr "Pažangūs"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:262
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:263
 msgid "Aggressive"
 msgstr "Agresyvus"
 
@@ -64,7 +64,7 @@ msgstr "Autoritarinis (zonos failas)"
 msgid "Basic"
 msgstr "Paprastas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:267
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:268
 msgid "Break down query components for limited added privacy"
 msgstr ""
 "Išskaidyti užklausos komponentus, kad užtikrintumėte ribotą papildomą "
@@ -78,11 +78,11 @@ msgstr "Nutraukti ciklą, kai „DNSSEC“ reikia – „NTP“, o „NTP“ –
 msgid "Check for local program to allow forward to localhost"
 msgstr "Patikrinti vietinę programą, kad galėtumėte persiųsti į – „localhost“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:84
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:85
 msgid "Choose Unbounds listening port"
 msgstr "Pasirinkti „Unbound“ laukiančius prisijungimo/jungties ryšio prievadus"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:238
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:239
 msgid "Choose the IP versions used upstream and downstream"
 msgstr "Pasirinkti IP versijas, naudojamas išsiuntimo ir atsiuntimo srautui"
 
@@ -94,11 +94,11 @@ msgstr "Prisijungti prie serverių naudojant „TLS“"
 msgid "DHCP"
 msgstr "„DHCP“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:158
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:159
 msgid "DHCP Link"
 msgstr "„DHCP“ sujungimas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:166
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:167
 msgid "DHCPv4 to SLAAC"
 msgstr "„DHCPv4“ į „SLAAC“"
 
@@ -114,7 +114,7 @@ msgstr "„DNS“ plėtinys"
 msgid "DNS over TLS"
 msgstr "„DNS“ per „TLS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:107
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:108
 msgid "DNS64 Prefix"
 msgstr "„DNS64“ prielinksnis/priešdėlis"
 
@@ -122,13 +122,13 @@ msgstr "„DNS64“ prielinksnis/priešdėlis"
 msgid "DNSSEC NTP Fix"
 msgstr "„DNSSEC NTP“ sutaisymas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:239
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:250
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:260
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:240
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:251
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:261
 msgid "Default"
-msgstr "Numatyta/-as"
+msgstr "Numatyta/-s"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:181
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:182
 msgid "Denied (nxdomain)"
 msgstr "Atmestas („nxdomain“)"
 
@@ -140,7 +140,7 @@ msgstr "Nurodyta zona"
 msgid "Directory only part of URL"
 msgstr "Katalogas/Vietovė, tik „URL“ – saito dalis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:115
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:116
 msgid "Domain Insecure"
 msgstr "Domeno-Sritis nesaugi"
 
@@ -148,11 +148,11 @@ msgstr "Domeno-Sritis nesaugi"
 msgid "Domain name to verify TLS certificate"
 msgstr "Domeno-srities pavadinimas, su kuriuo tikrinamas – „TLS“ sertifikatas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:173
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:174
 msgid "Domain suffix for this router and DHCP clients"
 msgstr "Šio maršrutizatoriaus ir „DHCP“ klientų domeno-srities priesaga"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:279
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:280
 msgid "EDNS Size"
 msgstr "„EDNS“ dydis"
 
@@ -198,7 +198,7 @@ msgstr "Redaguoti: Nesaistomas"
 msgid "Enable"
 msgstr "Įjungti/Įgalinti"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:102
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:103
 msgid "Enable DNS64"
 msgstr "Įjungti „DNS64“"
 
@@ -210,11 +210,11 @@ msgstr "Įjungti „DNSSEC“"
 msgid "Enable Unbound"
 msgstr "Įjungti nesaistomą"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:228
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:229
 msgid "Enable access for unbound-control"
 msgstr "Įgalinti prieigą prie „unbound-control“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:103
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:104
 msgid "Enable the DNS64 module"
 msgstr "Įgalinti „DNS64“ modulį"
 
@@ -232,17 +232,17 @@ msgstr "Įjungti šią nurodytą zoną"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:29
 msgid "Enabled"
-msgstr "Įjungta/Įgalinta (-s/-i)"
+msgstr "Įjungtas/Įgalintas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:297
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:298
 msgid "Extended Statistics"
 msgstr "Papildytos statistikos"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:298
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:299
 msgid "Extended statistics are printed from unbound-control"
 msgstr "Papildytos statistikos yra išspausdintos iš „unbound-control“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:213
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:214
 msgid "Extra DNS"
 msgstr "Papildomas „DNS“"
 
@@ -258,19 +258,19 @@ msgstr "Atsarginis"
 msgid "Files"
 msgstr "Failai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:99
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:100
 msgid "Filter Entire Subnet"
 msgstr "Filtruoti visą potinklį"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:90
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:91
 msgid "Filter Localhost Rebind"
 msgstr "Filtruoti „Localhost per-rišimas“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:98
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:99
 msgid "Filter Private Address"
 msgstr "Filtruoti privatų adresą"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:95
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:96
 msgid "Filter Private Rebind"
 msgstr "Filtruoti „Private Rebind“"
 
@@ -294,103 +294,103 @@ msgstr "Persiųsti į išsiunčiamojo srauto serverių pavadinimus („ISP/IPT?�
 msgid "Grant UCI access for luci-app-unbound"
 msgstr "Suteikti „UCI“ prieigą – „luci-app-unbound“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:195
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:207
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:196
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:208
 msgid "Host FQDN, All Addresses"
 msgstr "Skleidėjo/Vedėjo „FQDN“; visi adresai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:217
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:218
 msgid "Host Records"
 msgstr "Skleidėjo/Vedėjo įrašai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:218
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:219
 msgid "Host/MX/SRV RR"
 msgstr "Skleidėjas/Vedėjas┃„MX“/„SRV RR“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:219
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:220
 msgid "Host/MX/SRV/CNAME RR"
 msgstr "Skleidėjas/Vedėjas┃„MX“/„SRV“/„CNAME RR“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:194
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:206
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:195
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:207
 msgid "Hostname, All Addresses"
 msgstr "Įrenginio (t.y skleidėjo/vedėjo) pavadinimas, visi adresai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:193
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:205
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:194
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:206
 msgid "Hostname, Primary Address"
 msgstr ""
 "Įrenginio (t.y skleidėjo/vedėjo) pavadinimas, pirminis/pagrindinis adresas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:190
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:191
 msgid "How to enter the LAN or local network router in DNS"
 msgstr "Kaip įvesti „LAN“ arba vietinio tinklo maršrutizatorių į – „DNS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:179
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:180
 msgid "How to treat queries of this local domain"
 msgstr "Kaip tvarkyti šio vietinio domeno-srities užklausas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:241
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:242
 msgid "IP4 All and IP6 Local"
 msgstr "IP4 Visi ir IP6 vietinis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:240
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:241
 msgid "IP4 Only"
 msgstr "Tik „IP4“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:244
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:245
 msgid "IP4 and IP6"
 msgstr "„IP4“ ir „IP6“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:242
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:243
 msgid "IP6 Only*"
 msgstr "Tik „IP6“*"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:243
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:244
 msgid "IP6 Preferred"
 msgstr "Pageidaujamas „IP6“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:216
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:217
 msgid "Ignore"
 msgstr "Ignoruoti"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:196
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:208
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:197
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:209
 msgid "Interface FQDN, All Addresses"
 msgstr "Sąsajos ir/arba Sietuvo „FQDN“; visi adresai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:189
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:190
 msgid "LAN DNS"
 msgstr "„LAN DNS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:130
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:131
 msgid "LAN Networks"
 msgstr "„LAN“ tinklai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:254
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:255
 msgid "Large"
 msgstr "Didelis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:121
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:304
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:122
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:305
 msgid "Limit days between RFC5011 copies to reduce flash writes"
 msgstr ""
 "Riboti dienas tarp „RFC5011“ kopijų skaičių, kad sumažintumėte Išliekamosios "
 "atminties įrašus"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:280
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:281
 msgid "Limit extended DNS packet size"
 msgstr "Apriboti išplėstinio „DNS“ paketo dydį"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:159
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:160
 msgid "Link to supported programs to load DHCP into DNS"
 msgstr "Nuoroda į palaikomas programas, skirtas įkelti „DHCP“ į – „DNS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:116
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:117
 msgid "List domains to bypass checks of DNSSEC"
 msgstr "Pateikti domenus-sritys, kad būtų galima apeiti – „DNSSEC“ patikras"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:83
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:84
 msgid "Listening Port"
 msgstr ""
 "Laukiamas prisijungimo/jungties ryšio (stebi užklausas ir pasiruošęs "
@@ -400,19 +400,19 @@ msgstr ""
 msgid "Local Data"
 msgstr "Vietiniai duomenys"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:172
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:173
 msgid "Local Domain"
 msgstr "Vietinis domenas-sritis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:178
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:179
 msgid "Local Domain Type"
 msgstr "Vietinis domeno-srities tipas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:232
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:233
 msgid "Local Host, Encrypted"
 msgstr "Vietinis skleidėjas/vedėjas; šifruotas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:231
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:232
 msgid "Local Host, No Encryption"
 msgstr "Vietinis skleidėjas/vedėjas; be šifravimo"
 
@@ -420,11 +420,11 @@ msgstr "Vietinis skleidėjas/vedėjas; be šifravimo"
 msgid "Local Service"
 msgstr "Vietine tarnyba"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:233
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:234
 msgid "Local Subnet, Encrypted"
 msgstr "Vietinis potinklis, šifruotas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:234
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:235
 msgid "Local Subnet, Static Encryption"
 msgstr "Vietinis potinklis, nekintamai šifruotas"
 
@@ -440,39 +440,39 @@ msgstr "Žurnalas"
 msgid "Manual Conf"
 msgstr "Rankinė konfigūracija"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:253
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:254
 msgid "Medium"
 msgstr "Vidutinis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:248
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:249
 msgid "Memory Resource"
 msgstr "Atminties ištekliai"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:149
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:314
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:150
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:315
 msgid "Networks that may trigger Unbound to reload (avoid wan6)"
 msgstr ""
 "Tinklai, kurie gali suaktyvinti – „Unbound“ perkrovimą (venkite „wan6“)"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:131
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:132
 msgid "Networks to consider LAN (served) beyond those served by DHCP"
 msgstr ""
 "Tinklai, į kuriuos reikia atsižvelgti „LAN“ (aptarnaujami), išskyrus tuos, "
 "kuriuos aptarnauja – „DHCP“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:140
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:141
 msgid "Networks to consider WAN (unserved)"
 msgstr "Tinklai, į kuriuos reikia atsižvelgti „WAN“ (neaptarnaujami)"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:192
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:193
 msgid "No Entry"
 msgstr "Nėra įvesties"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:97
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:98
 msgid "No Filter"
 msgstr "Nėra filtro"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:230
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:231
 msgid "No Remote Control"
 msgstr "Nėra nuotolinio valdymo"
 
@@ -499,11 +499,11 @@ msgstr ""
 "Sutvarkyti nukreiptus persiuntimus, atšakas ir autoritetingas zonas <a "
 "href=\"%s\" target=\"_blank\">(pagalba)</a>."
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:202
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:203
 msgid "Override the WAN side router entry in DNS"
 msgstr "Perkeisti/Perrašyti „WAN“ pusės maršrutizatoriaus įrašą per – „DNS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:261
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:262
 msgid "Passive"
 msgstr "Pasyvus"
 
@@ -512,31 +512,31 @@ msgstr "Pasyvus"
 msgid "Port servers will receive queries on"
 msgstr "Prievado serveriai gaus užklausas per"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:108
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:109
 msgid "Prefix for generated DNS64 addresses"
 msgstr "Priešdėlis, skirtas sugeneruotiems „DNS64“ adresams"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:292
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:293
 msgid "Prevent client query overload; zero is off"
 msgstr "Išvengti kliento užklausų perkrovas; nulis yra – „išjungta“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:286
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:287
 msgid "Prevent excessively short cache periods"
 msgstr "Išvengti pernelyg trumpų talpyklos/podėlio laikotarpių"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:91
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:92
 msgid "Protect against upstream response of 127.0.0.0/8"
 msgstr "Apsaugoti prieš – 127.0.0.0.0/8; išsiunčiamo srauto atsakas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:96
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:97
 msgid "Protect against upstream responses within local subnets"
 msgstr "Apsaugoti prieš išsiunčiamo srauto atsakas, vietiniuose potinkliuose"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:266
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:267
 msgid "Query Minimize"
 msgstr "Užklausos sumažinimas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:291
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:292
 msgid "Query Rate Limit"
 msgstr "Užklausos spartos riba"
 
@@ -544,15 +544,15 @@ msgstr "Užklausos spartos riba"
 msgid "Recurse"
 msgstr "Rekursija"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:237
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:238
 msgid "Recursion Protocol"
 msgstr "Rekursijos protokolas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:258
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:259
 msgid "Recursion Strength"
 msgstr "Rekursijas stiprumas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:259
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:260
 msgid "Recursion activity affects memory growth and CPU load"
 msgstr "Rekursijos veikla turi įtakos atminties didėjimui ir „CPU“ apkrovai"
 
@@ -561,7 +561,7 @@ msgstr "Rekursijos veikla turi įtakos atminties didėjimui ir „CPU“ apkrova
 msgid "Recursive DNS"
 msgstr "Rekursinis „DNS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:182
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:183
 msgid "Refused"
 msgstr "Atmesta/-s"
 
@@ -569,8 +569,8 @@ msgstr "Atmesta/-s"
 msgid "Resource"
 msgstr "Išteklis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:120
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:303
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:121
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:304
 msgid "Root DSKEY Age"
 msgstr "Šakninis „DSKEY“ amžius"
 
@@ -614,11 +614,11 @@ msgstr "Rodyti: Nesaistomą"
 msgid "Skip UCI and use /etc/unbound/unbound.conf"
 msgstr "Praleisti „UCI“ ir naudoti „/etc/unbound/unbound.conf“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:252
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:253
 msgid "Small"
 msgstr "Mažas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:183
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:184
 msgid "Static (local only)"
 msgstr "Nekintama/-s (tik vietiniam)"
 
@@ -631,11 +631,11 @@ msgstr "Statistika"
 msgid "Status"
 msgstr "Būklė/Būsena"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:273
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:274
 msgid "Strict Minimize"
 msgstr "Griežtas minimizavimas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:274
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:275
 msgid "Strict version of 'query minimize' but it can break DNS"
 msgstr "Griežta užklausos sumažinimo versija, tačiau ji gali pažeisti „DNS“"
 
@@ -647,7 +647,7 @@ msgstr "Atšaka (priverstinė rekursija)"
 msgid "TLS Name Index"
 msgstr "„TLS“ pavadinimo indeksas"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:285
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:286
 msgid "TTL Minimum"
 msgstr "„TTL“ minimumas"
 
@@ -690,16 +690,16 @@ msgstr "Šis rodo „Unbound“ savarankiškai pateiktas našumo statistikas."
 msgid "This shows syslog filtered for events involving Unbound."
 msgstr "Tai rodo „syslog“ filtruojamus įvykius, susijusius su – „Unbound“."
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:251
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:252
 msgid "Tiny"
 msgstr "Mažylis"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:184
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:185
 msgid "Transparent (local/global)"
 msgstr "Permatomas (vietinis/išorinis/visuotinis)"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:148
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:313
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:149
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:314
 msgid "Trigger Networks"
 msgstr "Suaktyvinimo tinklai"
 
@@ -721,7 +721,7 @@ msgstr ""
 "patvirtinantis, rekursinis ir spartinantis „DNS“ sprendiklis <a href=\"%s\" "
 "target=\"_blank\">(pagalba)</a>."
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:227
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:228
 msgid "Unbound Control App"
 msgstr "„Unbound“ valdymo programėlė"
 
@@ -739,31 +739,31 @@ msgstr "Neapibrėžtas/-a"
 msgid "Use 'resolv.conf.auto'"
 msgstr "Naudoti „resolv.conf.auto“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:167
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:168
 msgid "Use DHCPv4 MAC to discover IP6 hosts SLAAC (EUI64)"
 msgstr ""
-"Naudoti „DHCPv4 MAC“, kad surastumėte IP6 skleidėjų/vedėjų – "
-"„SLAAC“ („EUI64“)"
+"Naudoti „DHCPv4 MAC“, kad surastumėte IP6 skleidėjų/vedėjų – „SLAAC“ "
+"(„EUI64“)"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:204
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:205
 msgid "Use Upstream"
 msgstr "Naudoti išsiunčiamąjį srautą"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:214
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:215
 msgid "Use extra DNS entries found in /etc/config/dhcp"
 msgstr "Naudoti papildomus „DNS“ įrašus, randamus per – „/etc/config/dhcp“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:249
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:250
 msgid "Use menu System/Processes to observe any memory growth"
 msgstr ""
 "Naudoti meniu – „Sistema/Vyksmai“, kad stebėtumėte bet kokios atminties "
 "augimą"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:201
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:202
 msgid "WAN DNS"
 msgstr "„WAN DNS“"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:139
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:140
 msgid "WAN Networks"
 msgstr "„WAN“ tinklai"
 
@@ -793,17 +793,17 @@ msgstr "Zonos"
 msgid "accept upstream results for"
 msgstr "priimti išsiunčiamų srautų rezultatus, skirtus"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:124
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:307
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:125
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:308
 msgid "default"
-msgstr "numatytas"
+msgstr "numatyta/-s"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:175
 msgid "download from <var>%s</var>"
 msgstr "atsisiųsti iš <var>%s</var>"
 
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:127
-#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:310
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:128
+#: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:311
 msgid "never"
 msgstr "niekada"
 

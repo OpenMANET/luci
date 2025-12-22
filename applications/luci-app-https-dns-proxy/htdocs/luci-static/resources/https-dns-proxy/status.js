@@ -18,62 +18,74 @@ var pkg = {
 	},
 	get URL() {
 		return (
-			"https://docs.openwrt.melmac.net/" +
+			"https://docs.openwrt.melmac.ca/" +
 			pkg.Name +
 			"/" +
 			(pkg.ReadmeCompat ? pkg.ReadmeCompat + "/" : "")
 		);
 	},
-	templateToRegexp: function (template) {
-		return RegExp(
-			"^" +
-				template
-					.split(/(\{\w+\})/g)
-					.map((part) => {
-						let placeholder = part.match(/^\{(\w+)\}$/);
-						if (placeholder) return `(?<${placeholder[1]}>.*?)`;
-						else return part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-					})
-					.join("") +
-				"$"
+	get DonateURL() {
+		return (
+			"https://docs.openwrt.melmac.ca/" +
+			pkg.Name +
+			"/" +
+			(pkg.ReadmeCompat ? pkg.ReadmeCompat + "/" : "") +
+			"#Donate"
 		);
 	},
+	templateToRegexp: function (template) {
+		if (template)
+			return new RegExp(
+				"^" +
+					template
+						.split(/(\{\w+\})/g)
+						.map((part) => {
+							let placeholder = part.match(/^\{(\w+)\}$/);
+							if (placeholder) return `(?<${placeholder[1]}>.*?)`;
+							else return part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+						})
+						.join("") +
+					"$"
+			);
+		return new RegExp("");
+	},
 	templateToResolver: function (template, args) {
-		return template.replace(/{(\w+)}/g, (_, v) => args[v]);
+		if (template) return template.replace(/{(\w+)}/g, (_, v) => args[v]);
+		return null;
 	},
 };
 
-var getInitList = rpc.declare({
+const getInitList = rpc.declare({
 	object: "luci." + pkg.Name,
 	method: "getInitList",
 	params: ["name"],
 });
 
-var getInitStatus = rpc.declare({
+const getInitStatus = rpc.declare({
 	object: "luci." + pkg.Name,
 	method: "getInitStatus",
 	params: ["name"],
 });
 
-var getPlatformSupport = rpc.declare({
+const getPlatformSupport = rpc.declare({
 	object: "luci." + pkg.Name,
 	method: "getPlatformSupport",
 	params: ["name"],
 });
 
-var getProviders = rpc.declare({
+const getProviders = rpc.declare({
 	object: "luci." + pkg.Name,
 	method: "getProviders",
 	params: ["name"],
 });
 
-var getRuntime = rpc.declare({
+const getRuntime = rpc.declare({
 	object: "luci." + pkg.Name,
 	method: "getRuntime",
 	params: ["name"],
 });
 
-var _setInitAction = rpc.declare({
+const _setInitAction = rpc.declare({
 	object: "luci." + pkg.Name,
 	method: "setInitAction",
 	params: ["name", "action"],
@@ -157,8 +169,11 @@ var status = baseclass.extend({
 					force_dns_active: null,
 					version: null,
 				},
-				providers: (data[1] && data[1][pkg.Name]) || { providers: [] },
-				runtime: (data[2] && data[2][pkg.Name]) || { instances: [] },
+				providers: (data[1] && data[1][pkg.Name]) || [{ title: "empty" }],
+				runtime: (data[2] && data[2][pkg.Name]) || {
+					instances: null,
+					triggers: [],
+				},
 			};
 			reply.providers.sort(function (a, b) {
 				return _(a.title).localeCompare(_(b.title));
@@ -197,7 +212,7 @@ var status = baseclass.extend({
 			} else {
 				text = _("Not installed or not found");
 			}
-			var statusText = E("div", {}, text);
+			var statusText = E("div", { class: "cbi-value-description" }, text);
 			var statusField = E("div", { class: "cbi-value-field" }, statusText);
 			var statusDiv = E("div", { class: "cbi-value" }, [
 				statusTitle,
@@ -275,7 +290,13 @@ var status = baseclass.extend({
 							"<br />"
 						);
 				});
-				var instancesText = E("div", {}, text);
+				text +=
+					"<br />" +
+					_("Please %sdonate%s to support development of this project.").format(
+						"<a href='" + pkg.DonateURL + "' target='_blank'>",
+						"</a>"
+					);
+				var instancesText = E("div", { class: "cbi-value-description" }, text);
 				var instancesField = E("div", { class: "cbi-value-field" }, [
 					instancesText,
 					instancesDescr,
