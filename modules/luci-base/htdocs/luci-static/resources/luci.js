@@ -2887,6 +2887,23 @@
 		},
 
 		/**
+		 * Tests whether the passed argument is a function arguments object.
+		 *
+		 * @instance
+		 * @memberof LuCI
+		 *
+		 * @param {*} [val]
+		 * The value to test
+		 *
+		 * @return {boolean}
+		 * Returns `true` if the given value is a function arguments object,
+		 * else returns `false`.
+		 */
+		isArguments(val) {
+			return (Object.prototype.toString.call(val) == '[object Arguments]');
+		},
+
+		/**
 		 * Construct an URL path relative to the global static resource path
 		 * of the LuCI ui (usually `/luci-static/resources`) with a
 		 * cache-busting parameter.
