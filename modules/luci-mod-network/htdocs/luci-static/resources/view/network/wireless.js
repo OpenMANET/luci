@@ -83,18 +83,13 @@ function attachECPDHGroups(o) {
 	o.value(20, _('20 - 384-bit random ECP group (NIST)'));
 	o.value(21, _('21 - 512-bit random ECP group (NIST)'));
 }
+const isReadonlyView = !L.hasViewPermission();
 
 function count_changes(section_id) {
-	var changes = ui.changes.changes, n = 0;
+	const changes = ui.changes.changes?.wireless;
+	if (!Array.isArray(changes)) return 0;
 
-	if (!L.isObject(changes))
-		return n;
-
-	if (Array.isArray(changes.wireless))
-		for (var i = 0; i < changes.wireless.length; i++)
-			n += (changes.wireless[i][1] == section_id);
-
-	return n;
+	return changes.reduce((count, [, id]) => count + (id === section_id), 0);
 }
 
 function render_radio_badge(radioDev) {
@@ -326,11 +321,10 @@ function get_all_ifaces_of_device_from_iface_id(id) {
 		return false;
 	});
 }
-
 function network_updown(id, map, ev) {
-	var radio = uci.get('wireless', id, 'device'),
-		disabled = (uci.get('wireless', id, 'disabled') == '1') ||
-			(uci.get('wireless', radio, 'disabled') == '1');
+	const radio = uci.get('wireless', id, 'device');
+	const disabled = (uci.get('wireless', id, 'disabled') == '1') ||
+	               (uci.get('wireless', radio, 'disabled') == '1');
 
 	if (disabled) {
 		uci.unset('wireless', id, 'disabled');
@@ -878,24 +872,19 @@ return view.extend({
 		return network.flushCache();
 	},
 
-	load: function () {
+	load: function() {
 		return Promise.all([
 			fs.exec('/usr/bin/morse-bcf-info').catch(error => ({error})),
 			uci.changes(),
 			uci.load('wireless'),
 			uci.load('system'),
 			uci.load("mesh11sd").catch(e => null)
+			firewall.getZones(),
 		]);
 	},
 
-	checkAnonymousSections: function () {
-		var wifiIfaces = uci.sections('wireless', 'wifi-iface');
-
-		for (var i = 0; i < wifiIfaces.length; i++)
-			if (wifiIfaces[i]['.anonymous'])
-				return true;
-
-		return false;
+	checkAnonymousSections: function() {
+		return uci.sections('wireless', 'wifi-iface').some(iface => iface['.anonymous']);
 	},
 
 	callUciRename: rpc.declare({
@@ -1608,26 +1597,26 @@ return view.extend({
 					o = ss.taboption('advanced', form.Value, 'dtim_period', _('DTIM Interval'), _('Delivery Traffic Indication Message Interval'));
 					o.optional = true;
 					o.placeholder = 2;
-					o.datatype = 'and(integer, range(1,255))';
+					o.datatype = 'range(1,255)';
 
 					o = ss.taboption('advanced', form.Value, 'wpa_group_rekey', _('Time interval for rekeying GTK'), _('sec'));
-					o.optional = true;
+					o.optional    = true;
 					o.placeholder = 600;
-					o.datatype = 'uinteger';
+					o.datatype    = 'uinteger';
 
-					o = ss.taboption('advanced', form.Flag, 'skip_inactivity_poll', _('Disable Inactivity Polling'));
-					o.optional = true;
-					o.datatype = 'uinteger';
+					o = ss.taboption('advanced', form.Flag , 'skip_inactivity_poll', _('Disable Inactivity Polling'));
+					o.optional    = true;
+					o.datatype    = 'uinteger';
 
 					o = ss.taboption('advanced', form.Value, 'max_inactivity', _('Station inactivity limit'), _('802.11v: BSS Max Idle. Units: seconds.'));
-					o.optional = true;
+					o.optional    = true;
 					o.placeholder = 300;
-					o.datatype = 'uinteger';
+					o.datatype    = 'uinteger';
 
 					o = ss.taboption('advanced', form.Value, 'max_listen_interval', _('Maximum allowed Listen Interval'));
-					o.optional = true;
+					o.optional    = true;
 					o.placeholder = 65535;
-					o.datatype = 'uinteger';
+					o.datatype    = 'uinteger';
 
 					o = ss.taboption('advanced', form.Flag, 'disassoc_low_ack', _('Disassociate On Low Acknowledgement'), _('Allow AP mode to disconnect STAs based on low ACK condition'));
 					o.default = o.enabled;
@@ -1952,8 +1941,8 @@ return view.extend({
 					o.depends('mode', 'ahdemo');
 				}
 
-				o.cfgvalue = function (section_id) {
-					var v = String(uci.get('wireless', section_id, 'encryption'));
+				o.cfgvalue = function(section_id) {
+					const v = String(uci.get('wireless', section_id, 'encryption'));
 					if (v == 'wep')
 						return 'wep-open';
 					else if (v.match(/\+/))
@@ -2007,11 +1996,10 @@ return view.extend({
 				};
 
 
-				var crypto_modes = [];
-
 				if (['mac80211', 'morse'].includes(hwtype)) {
 					var wpasupplicant = hwtype === 'morse' ? 'wpasupplicant_s1g' : 'wpasupplicant',
 						hostapd = hwtype === 'morse' ? 'hostapd_s1g' : 'hostapd';
+				const crypto_modes = [];
 
 					var has_supplicant = L.hasSystemFeature(wpasupplicant),
 						has_hostapd = L.hasSystemFeature(hostapd);
