@@ -878,7 +878,7 @@ return view.extend({
 			uci.changes(),
 			uci.load('wireless'),
 			uci.load('system'),
-			uci.load("mesh11sd").catch(e => null)
+			uci.load("mesh11sd").catch(e => null),
 			firewall.getZones(),
 		]);
 	},
