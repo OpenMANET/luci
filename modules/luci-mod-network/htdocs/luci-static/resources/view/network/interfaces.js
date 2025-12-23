@@ -250,39 +250,6 @@ function has_sourcefilter(proto) {
 	return false;
 }
 
-var cbiRichListValue = form.ListValue.extend({
-	renderWidget: function(section_id, option_index, cfgvalue) {
-		var choices = this.transformChoices();
-		var widget = new ui.Dropdown((cfgvalue != null) ? cfgvalue : this.default, choices, {
-			id: this.cbid(section_id),
-			sort: this.keylist,
-			optional: true,
-			select_placeholder: this.select_placeholder || this.placeholder,
-			custom_placeholder: this.custom_placeholder || this.placeholder,
-			validate: L.bind(this.validate, this, section_id),
-			disabled: (this.readonly != null) ? this.readonly : this.map.readonly
-		});
-
-		return widget.render();
-	},
-
-	value: function(value, title, description) {
-		if (description) {
-			form.ListValue.prototype.value.call(this, value, E([], [
-				E('span', { 'class': 'hide-open' }, [ title ]),
-				E('div', { 'class': 'hide-close', 'style': 'min-width:25vw' }, [
-					E('strong', [ title ]),
-					E('br'),
-					E('span', { 'style': 'white-space:normal' }, description)
-				])
-			]));
-		}
-		else {
-			form.ListValue.prototype.value.call(this, value, title);
-		}
-	}
-});
-
 return view.extend({
 	poll_status: function(map, networks) {
 		var resolveZone = null;
@@ -357,7 +324,6 @@ return view.extend({
 			network.getDSLModemType(),
 			network.getDevices(),
 			fs.lines('/etc/iproute2/rt_tables'),
-			L.resolveDefault(fs.read('/usr/lib/opkg/info/netifd.control')),
 			uci.changes()
 		]);
 	},
@@ -1045,9 +1011,6 @@ return view.extend({
 					so.depends('dhcpv6', 'server');
 					so.depends({ dhcpv6: 'hybrid', master: '0' });
 
-
-					so = ss.taboption('ipv6', cbiRichListValue, 'ndp', _('<abbr title="Neighbour Discovery Protocol">NDP</abbr>-Proxy'),
-						_('Configures the operation mode of the NDP proxy service on this interface.'));
 					//This is a DHCPv6 specific odhcpd setting
 					so = ss.taboption('ipv6', form.DynamicList, 'ntp', _('NTP Servers'),
 						_('DHCPv6 option 56. %s.', 'DHCPv6 option 56. RFC5908 link').format('<a href="%s" target="_blank">RFC5908</a>').format('https://www.rfc-editor.org/rfc/rfc5908#section-4'));
@@ -1092,18 +1055,6 @@ return view.extend({
 					so = ss.taboption('ipv6', form.Flag, 'ndproxy_slave', _('NDP-Proxy slave'), _('Set interface as NDP-Proxy external slave. Default is off.'));
 					so.depends({ ndp: 'relay', master: '0' });
 					so.depends({ ndp: 'hybrid', master: '0' });
-
-					so = ss.taboption('ipv6', form.Value, 'preferred_lifetime', _('IPv6 Prefix Lifetime'), _('Preferred lifetime for a prefix.'));
-					so.optional = true;
-					so.placeholder = '12h';
-					so.value('5m', _('5m (5 minutes)'));
-					so.value('3h', _('3h (3 hours)'));
-					so.value('12h', _('12h (12 hours - default)'));
-					so.value('7d', _('7d (7 days)'));
-
-					//This is a ra_* setting, but its placement is more logical/findable under IPv6 settings.
-					so = ss.taboption('ipv6', form.Flag, 'ra_useleasetime', _('Follow IPv4 Lifetime'), _('DHCPv4 <code>leasetime</code> is used as limit and preferred lifetime of the IPv6 prefix.'));
-					so.optional = true;
 				}
 
 				ifc.renderFormOptions(s);
