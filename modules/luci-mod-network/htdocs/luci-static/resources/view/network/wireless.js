@@ -780,7 +780,7 @@ return view.extend({
 		const radios = data[3];
 		const zones = data[4];
 
-		radios.forEach(zone => {
+		zones.forEach(zone => {
 			const bss = zone;
 			const name = hosts.getHostnameByMACAddr(bss.mac);
 			const ipv4 = hosts.getIPAddrByMACAddr(bss.mac);
